@@ -1,6 +1,6 @@
 const express = require('express')
-const path = require('path')
 const hbs = require('express-handlebars')
+const data = require('./data')
 
 const server = express()
 
@@ -12,10 +12,6 @@ server.engine('hbs', hbs({ extname: 'hbs' }))
 // Tell our server to use the 'hbs' view engine
 server.set('view engine', 'hbs')
 
-// Create static 'public' folder
-const publicFolder = path.join(__dirname, 'public')
-server.use(express.static(publicFolder))
-
 // Accept URL encoded data on POST requests
 server.use(express.urlencoded({ extended: false }))
 
@@ -24,6 +20,11 @@ server.use(express.urlencoded({ extended: false }))
 
 // Index route
 server.get('/', (req, res) => {
-    const pathname = path.join(__dirname, '/')
-    res.sendFile(pathname)
+    const viewData = {
+        fName: data.details.name,
+        isCool: data.details.isCool,
+        tashCol: data.details.tashCol,
+        friend: data.friends.name
+    }
+    res.render('home', viewData)
 })

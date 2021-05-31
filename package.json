@@ -21,7 +21,7 @@
   "homepage": "https://github.com/krjw-00/handlebars-example#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.3.2"    
+    "express-handlebars": "^5.3.2"
   },
   "devDependencies": {
     "jest": "^27.0.3",
