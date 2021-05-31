@@ -1,10 +1,17 @@
 <h2>
 {{#if isCool}}
 Nice
+{{else}}
+Rubbish
 {{/if}}
- {{tashCol}} tash, {{fName}}
+<span style="colour: {{tashCol}};">{{tashCol}}</span> tash, {{fName}}
 </h2>
 
+<ul>
+{{#each friends}}
+    {{> friend}}
+{{/each}}
+</ul>
 
 
 <p>{{viewData}}</p>

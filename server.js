@@ -24,7 +24,7 @@ server.get('/', (req, res) => {
         fName: data.details.name,
         isCool: data.details.isCool,
         tashCol: data.details.tashCol,
-        friend: data.friends.name
+        friends: data.friends
     }
     res.render('home', viewData)
 })
