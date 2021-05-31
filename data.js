@@ -1,7 +1,7 @@
 module.exports = {
     details: {
         name: 'Gary',
-        isCool: false,
+        isCool: true,
         tashCol: 'pink'
     },
     friends: [
